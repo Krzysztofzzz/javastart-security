@@ -10,11 +10,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests(requests -> requests.anyRequest().authenticated());
         http.csrf().disable();
-/*        http.formLogin(login -> login
+        http.formLogin(login -> login
                 .loginPage("/logowanie")
                 .usernameParameter("user")
                 .passwordParameter("pass")
-                .permitAll());*/
+                .permitAll());
         http.formLogin(login -> login.loginPage("/login").permitAll());
     }
 
