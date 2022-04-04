@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<html lang="pl"
+      th:lang="${#request.getParameter('lang') ne null? #request.getParameter('lang') : 'en'}"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Strona główna</title>
 </head>
 <body>
-<h1>Strona główna</h1>
-<h2 th:text="|Hello ${username}!|">Hello John!</h2>
+<h1 th:text="${welcomeMessage}">Hello John!</h1>
 </body>
 </html>
