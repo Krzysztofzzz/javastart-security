@@ -1,4 +1,4 @@
-package com.javastart;
+package com.javastart.sec;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
