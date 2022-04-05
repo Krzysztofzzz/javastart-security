@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="pl"
-      th:lang="${#request.getParameter('lang') ne null? #request.getParameter('lang') : 'en'}"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Strona główna</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/styles/main.css" th:href="@{/styles/main.css}" />
 </head>
 <body>
-<h1 th:text="${welcomeMessage}">Hello John!</h1>
-<a th:if="${#authentication.isAuthenticated()}"
-   th:text="|Wyloguj się ${#authentication.name}|"
-   th:href="@{/logout}">Wyloguj się John</a>
+<div class="container">
+    <h1>Bezpieczna strona</h1>
+    <img src="../static/img/security-image.jpg" th:src="@{/img/security-image.jpg}" alt="Bezpieczna strona"/>
+    <a href="#" th:href="@{/secured}">Zabezpieczona strona</a>
+    <a href="#" th:href="@{/admin}">Panel admina</a>
+</div>
 </body>
 </html>

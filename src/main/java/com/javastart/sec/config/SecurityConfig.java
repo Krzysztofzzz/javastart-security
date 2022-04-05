@@ -9,7 +9,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(requests -> requests
+        http.authorizeRequests(requests -> requests
+                .mvcMatchers("/").permitAll()
+                .mvcMatchers("/secured").hasRole("USER")
                 .anyRequest().authenticated()
         );
         http.csrf().disable();
